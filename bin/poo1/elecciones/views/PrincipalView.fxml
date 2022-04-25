@@ -6,15 +6,17 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="172.0" prefWidth="379.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
+prefHeight="172.0" prefWidth="379.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="poo1.elecciones.controllers.PrincipalController">
    <children>
-      <Button layoutX="40.0" layoutY="25.0" mnemonicParsing="false" text="Registrar Personero" />
-      <Button layoutX="198.0" layoutY="25.0" mnemonicParsing="false" text="Registrar Representante" />
-      <Button layoutX="85.0" layoutY="65.0" mnemonicParsing="false" text="Votar" />
-      <Button layoutX="218.0" layoutY="65.0" mnemonicParsing="false" text="Generar Reportes" />
-      <ComboBox layoutX="96.0" layoutY="126.0" prefWidth="150.0" />
+      <Button layoutX="40.0" layoutY="25.0" mnemonicParsing="false" text="Registrar Personero" onAction="#abrirRegistrarPersonero" />
+      <Button layoutX="198.0" layoutY="25.0" mnemonicParsing="false" text="Registrar Representante" onAction="#abrirRegistrarRepresentante" />
+      <Button layoutX="85.0" layoutY="65.0" mnemonicParsing="false" text="Votar" onAction="#abrirRegistrarVoto" />
+      <Button layoutX="218.0" layoutY="65.0" mnemonicParsing="false" text="Generar Reportes" onAction="#abrirGenerarReportes" />
+      <ComboBox layoutX="96.0" layoutY="126.0" prefWidth="150.0" fx:id="cmbOpciones" />
       <Separator layoutX="90.0" layoutY="111.0" prefWidth="200.0" />
       <Label layoutX="40.0" layoutY="130.0" text="Opción:" />
-      <Button layoutX="261.0" layoutY="126.0" mnemonicParsing="false" text="Ir" />
+      <Button layoutX="261.0" layoutY="126.0" mnemonicParsing="false" text="Ir" onAction="#abrirOpcion" />
    </children>
 </AnchorPane>

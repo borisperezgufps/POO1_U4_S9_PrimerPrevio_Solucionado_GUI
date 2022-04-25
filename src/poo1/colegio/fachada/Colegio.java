@@ -11,9 +11,33 @@ public class Colegio {
 
 	private Candidato[] candidatos;
 	
-	public Colegio(int tamanio) {
-		candidatos = new Candidato[tamanio];
+	/*
+	 * Es esta parte del código se hace un cambio importante.
+	 * El propósito es mantener la misma instancia Colegio para
+	 * todos los controladores que la estén invocando. De lo contrario
+	 * se creará una instancia para cada controlador y se perderá la 
+	 * información que se vaya registrando.
+	 * El cambio consiste en colocar visibilidad privada para el constructor
+	 * de la clase, junto con las demás instrucciones de este bloque.
+	 */
+	
+	private static Colegio instancia;
+	
+	private Colegio() {		
+		candidatos = new Candidato[5];
 	}
+	
+	public static Colegio obtenerInstancia() {
+		if(instancia==null)
+			instancia = new Colegio();
+		
+		return instancia;
+	}
+	
+	
+	/*
+	 * Finalización del bloque de cambio.
+	 */
 	
 	public void agregarCandidatoPersonero(String nombre, String apellido, 
 			String grado, String lema, int numeroTarjeton, String idMascota, 
@@ -37,6 +61,8 @@ public class Colegio {
 			System.err.println(nombre + " " + apellido + 
 					" no se puede agregar con el tarjetÃ³n " + 
 					numeroTarjeton + ".\nYa existe un candidato con ese nÃºmero");
+		
+		System.out.println("Personero agregado correctamente");
 		
 	}
 	
