@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="172.0" prefWidth="379.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="40.0" layoutY="25.0" mnemonicParsing="false" text="Registrar Personero" />
+      <Button layoutX="198.0" layoutY="25.0" mnemonicParsing="false" text="Registrar Representante" />
+      <Button layoutX="85.0" layoutY="65.0" mnemonicParsing="false" text="Votar" />
+      <Button layoutX="218.0" layoutY="65.0" mnemonicParsing="false" text="Generar Reportes" />
+      <ComboBox layoutX="96.0" layoutY="126.0" prefWidth="150.0" />
+      <Separator layoutX="90.0" layoutY="111.0" prefWidth="200.0" />
+      <Label layoutX="40.0" layoutY="130.0" text="Opción:" />
+      <Button layoutX="261.0" layoutY="126.0" mnemonicParsing="false" text="Ir" />
+   </children>
+</AnchorPane>
