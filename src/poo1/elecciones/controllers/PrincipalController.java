@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -31,6 +32,10 @@ public class PrincipalController implements Initializable{
 		abrirVentana(e, "RegistrarPersoneroView");				
 	}
 	
+	public void abrirActualizarPersonero(ActionEvent e){		
+		abrirVentana(e, "ActualizarPersoneroView");				
+	}
+	
 	public void abrirRegistrarRepresentante(ActionEvent e){		
 		abrirVentana(e, "RegistrarRepresentanteView");				
 	}
@@ -44,6 +49,8 @@ public class PrincipalController implements Initializable{
 	}
 	
 	private void abrirVentana(ActionEvent e, String vista) {
+		
+		
 		Stage stage = obtenerStage(e);
 		stage.close();
 		
@@ -74,6 +81,7 @@ public class PrincipalController implements Initializable{
 	
 	private String obtenerNombreView(String opcion) {
 		String vista = "";
+		
 		switch(opcion) {
 		case "Votar":
 			vista = "RegistrarVotoView";
@@ -83,6 +91,9 @@ public class PrincipalController implements Initializable{
 			break;
 		case "Registrar Representante":
 			vista = "RegistrarRepresentanteView";
+			break;
+		case "Actualizar Personero":
+			vista = "ActualizarPersoneroView";
 			break;
 		case "Generar Reportes":
 			vista = "GenerarReportesView";
@@ -97,14 +108,29 @@ public class PrincipalController implements Initializable{
 		ArrayList<String> listaOpciones = new ArrayList<>();
 		listaOpciones.add("Votar");
 		listaOpciones.add("Registrar Personero");
+		listaOpciones.add("Actualizar Personero");
 		listaOpciones.add("Registrar Representante");
 		listaOpciones.add("Generar Reportes");
+		listaOpciones.add("POO1");
 		
 		
-		// Se invoca el método getItems del ComboBox, y se agregan todos los
+		// Se invoca el mï¿½todo getItems del ComboBox, y se agregan todos los
 		// elementos que vienen de la lista de amigos inicial.
 		cmbOpciones.getItems().addAll(listaOpciones);
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 

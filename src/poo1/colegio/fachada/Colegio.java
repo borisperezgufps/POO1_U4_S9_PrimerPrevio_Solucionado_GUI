@@ -12,13 +12,13 @@ public class Colegio {
 	private Candidato[] candidatos;
 	
 	/*
-	 * Es esta parte del código se hace un cambio importante.
-	 * El propósito es mantener la misma instancia Colegio para
-	 * todos los controladores que la estén invocando. De lo contrario
-	 * se creará una instancia para cada controlador y se perderá la 
-	 * información que se vaya registrando.
+	 * Es esta parte del cï¿½digo se hace un cambio importante.
+	 * El propï¿½sito es mantener la misma instancia Colegio para
+	 * todos los controladores que la estï¿½n invocando. De lo contrario
+	 * se crearï¿½ una instancia para cada controlador y se perderï¿½ la 
+	 * informaciï¿½n que se vaya registrando.
 	 * El cambio consiste en colocar visibilidad privada para el constructor
-	 * de la clase, junto con las demás instrucciones de este bloque.
+	 * de la clase, junto con las demï¿½s instrucciones de este bloque.
 	 */
 	
 	private static Colegio instancia;
@@ -36,7 +36,7 @@ public class Colegio {
 	
 	
 	/*
-	 * Finalización del bloque de cambio.
+	 * Finalizaciï¿½n del bloque de cambio.
 	 */
 	
 	public void agregarCandidatoPersonero(String nombre, String apellido, 
@@ -167,6 +167,22 @@ public class Colegio {
 			}
 		}
 		return false;
+	}
+	
+	public String listarDatosPersoneros() {
+		String mensaje = "";
+		
+		for(int t=0;t<candidatos.length;t++) {
+			Candidato c = candidatos[t];
+			if(c!=null) {
+				if(c instanceof Personero) {
+					Personero pc = (Personero)c;
+					mensaje += pc.getNombre() + " " + pc.getApellido() + " - #" + pc.getNumeroTarjeton() + "\n";
+				}
+			}
+		}
+		
+		return mensaje;
 	}
 	
 }

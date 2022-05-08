@@ -2,8 +2,6 @@ package poo1.elecciones.controllers;
 
 import java.io.IOException;
 
-import javax.swing.JOptionPane;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,8 +12,8 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import poo1.colegio.fachada.Colegio;
 
-public class RegistrarPersoneroController {
-	
+public class ActualizarPersoneroController {
+
 	@FXML private TextField txtNombres;
 	@FXML private TextField txtApellidos;
 	@FXML private TextField txtNumTarjeton;
@@ -26,35 +24,15 @@ public class RegistrarPersoneroController {
 	
 	private Colegio colegioObj;
 	
-	public RegistrarPersoneroController() {
+	public ActualizarPersoneroController() {
 		colegioObj = Colegio.obtenerInstancia();
 	}
 	
-	@FXML public void registrarPersonero(ActionEvent e) {
+	public void actualizarPersonero(ActionEvent e) {
 		
-		String nombres = txtNombres.getText();
-		String apellidos = txtApellidos.getText();
-		
-		String numTarjeton = txtNumTarjeton.getText();
-		int numTarjetonInt = Integer.parseInt(numTarjeton);		
-		
-		String grado = txtGrado.getText();
-		String lema = txtLema.getText();
-		String idMascota = txtIdMascota.getText();
-		String nombreMascota = txtNombreMascota.getText();
-		
-		colegioObj.agregarCandidatoPersonero(nombres, apellidos, grado, 
-				lema, numTarjetonInt, idMascota, nombreMascota);
-		
-		txtNombres.clear();
-		txtApellidos.clear();
-		txtNumTarjeton.clear();
-		txtGrado.clear();
-		txtLema.clear();
-		txtIdMascota.clear();
-		txtNombreMascota.clear();
-		
-//		JOptionPane.showMessageDialog(null, "El personero se agrego satisfactoriamente");
+	}
+	
+	public void buscarPersonero(ActionEvent e) {
 		
 	}
 	
