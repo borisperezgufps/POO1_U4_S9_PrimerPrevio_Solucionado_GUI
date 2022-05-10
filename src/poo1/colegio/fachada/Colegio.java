@@ -1,5 +1,7 @@
 package poo1.colegio.fachada;
 
+import java.util.ArrayList;
+
 import poo1.colegio.base.Candidato;
 import poo1.colegio.base.Personero;
 import poo1.colegio.base.Representante;
@@ -25,6 +27,9 @@ public class Colegio {
 	
 	private Colegio() {		
 		candidatos = new Candidato[5];
+		
+		agregarCandidatoPersonero("Boris", "Perez", "1", "Todos", 1, "1", "Perla");
+		agregarCandidatoPersonero("Yarlin", "Mercedes", "2", "Ninguno", 2, "2", "Firulais");
 	}
 	
 	public static Colegio obtenerInstancia() {
@@ -34,6 +39,23 @@ public class Colegio {
 		return instancia;
 	}
 	
+	public Personero buscarPersonero(int numeroTarjeton) {
+		
+		Personero per = null;
+		
+		for(int t=0;t<candidatos.length;t++) {
+			Candidato c = candidatos[t];
+			if(c!=null) {
+				if(c.getNumeroTarjeton()==numeroTarjeton) {
+					per = (Personero) c;
+					break;
+				}
+			}
+		}
+		
+		return per;
+		
+	}
 	
 	/*
 	 * Finalizaci�n del bloque de cambio.
@@ -184,5 +206,70 @@ public class Colegio {
 		
 		return mensaje;
 	}
+	
+	public ArrayList<String> listarNombresPersoneros(){
+		ArrayList<String> nombres = new ArrayList<String>();
+		
+		for(int t=0;t<candidatos.length;t++) {
+			Candidato c = candidatos[t];
+			if(c!=null) {
+				if(c instanceof Personero) {
+					Personero p = (Personero)c;
+					
+						
+					
+					// El metodo add se usa en ArrayList
+					// para agregar un elemento a la lista.
+					nombres.add(p.getNombre()+ " " + p.getApellido());
+				}
+			}
+		}
+		
+		return nombres;
+	}
+	
+	public ArrayList<Personero> listarPersoneros(){
+		ArrayList<Personero> nombres = new ArrayList<Personero>();
+		
+		for(int t=0;t<candidatos.length;t++) {
+			Candidato c = candidatos[t];
+			if(c!=null) {
+				if(c instanceof Personero) {
+					Personero p = (Personero)c;
+					
+					// El metodo add se usa en ArrayList
+					// para agregar un elemento a la lista.
+					nombres.add(p);
+				}
+			}
+		}
+		
+		return nombres;
+	}
+
+	public void actualizarPersonero(int numTarjetonInt, String nombres, 
+			String apellidos, String grado, String lema) {
+		
+		for(int t=0;t<candidatos.length;t++) {
+			Candidato c = candidatos[t];
+			if(c!=null) {
+				if(c.getNumeroTarjeton()==numTarjetonInt) {
+					c.setNombre(nombres);
+					c.setApellido(apellidos);
+					c.setGrado(grado);
+					c.setLema(lema);
+				}
+			}
+		}
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
